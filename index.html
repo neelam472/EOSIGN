@@ -1,29 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Video Page</title>
+  <title>My Video Showcase</title>
   <style>
     body {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
       margin: 0;
       background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    p {
+      max-width: 800px;
+      margin: 20px auto;
+      color: #555;
+    }
+    .video-container {
+      margin: 40px 0;
     }
     video {
-      max-width: 80%;
+      width: 80%;
+      max-width: 800px;
       height: auto;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      display: block;
+      margin: 0 auto;
+    }
+    .caption {
+      font-style: italic;
+      color: #666;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
-  <video controls autoplay muted loop>
-    <source src="multiple_signers_v1.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+
+  <h1>Supplementary Material: Video Demonstration of EOSIGN:</h1>
+
+  <p>
+    In this supplementary material, we provide two videos to demonstrate the performance of our proposed system for sign language generation. These videos highlight the differences between traditional multi-signer recordings, which often exhibit temporal inconsistencies and a synthetically generated single-signer video created using our framework.
+  </p>
+
+  <!-- 🟢 First Video -->
+  <div class="video-container">
+    <video controls autoplay muted loop>
+      <source src="multiple_signers_v1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="caption">Figure 1: Multiple Signers Video</div>
+  </div>
+
+  <p>
+    Multiple Signers Video contains real-world recordings of multiple signers performing different signs. This video showcases the natural variation in signing styles, hand movements and facial expressions. However, due to the use of multiple signers and varying recording conditions, the video exhibits temporal inconsistencies such as abrupt transitions, timing variations, and occasional disruptions in gesture fluidity. These inconsistencies arise from differences in individual signing speeds and styles, leading to unnatural transitions between signers. This video serves as a benchmark for comparing the fluidity and temporal consistency of natural sign language to the output of our synthetic model.
+  </p>
+
+  <!-- 🔵 Second Video -->
+  <div class="video-container">
+    <video controls autoplay muted loop>
+      <source src="single_signer.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="caption">Figure 2: Single Signer Video</div>
+  </div>
+
+  <p>
+    Single Signer Video demonstrates the output of our proposed system, where a single signer performs various signs. In contrast to the traditional multi-signer video, our proposed system ensure temporal consistency throughout the single-signer process. It ensures that transitions between signs are fluid, realistic, and free from interruptions. The consistent posture and smooth gesture transitions in the single singer video showcase the system’s ability to produce coherent and natural signing. While the video demonstrates high-quality output, we recognize that clarity can be further improved through the integration of latent diffusion models, which we plan to incorporate in the next release.
+  </p>
+  <p> By comparing these two videos, viewers can observe the temporal inconsistencies present in the traditional multi-signer video, where abrupt transitions and inconsistencies in signing styles affect the fluidity of gestures. In contrast, the video produced by our model maintains temporal consistency and natural transitions between signs using single signer. While the single signer video currently performs well, further enhancements in video clarity and fine-grained details will be achieved through the integration of diffusion models in future versions.</p>
+  <p> These video demonstrations provide important qualitative insights into the capabilities of our system. The traditional multi-signer video highlights common issues such as temporal inconsistencies, while the single signer video showcases the strengths of our approach in producing temporally consistent and fluid sign language sequences. Going forward, we aim to further enhance the visual clarity and realism of the generated videos.</p>
+
 </body>
 </html>
