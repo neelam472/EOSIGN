@@ -43,6 +43,79 @@
       color: #666;
       margin-top: 10px;
     }
+	/* ===== Unseen Signer Analysis: 1 Original + 3 Generated per row ===== */
+
+.unseen-gallery {
+  width: 100%;
+  max-width: 980px;
+  margin: 40px 0;
+  text-align: center;
+}
+
+/* Header row: Original | Generated (spans 3 columns) */
+.unseen-header {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.unseen-header .original-title,
+.unseen-header .generated-title {
+  font-weight: bold;
+  color: #333;
+  background: #fff;
+  padding: 10px 8px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.unseen-header .generated-title {
+  grid-column: 2 / span 3;
+  text-align: center;
+}
+
+/* One row = 4 GIFs */
+.unseen-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.unseen-card {
+  background: #fff;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+}
+
+.unseen-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .unseen-header {
+    grid-template-columns: 1fr;
+  }
+  .unseen-header .generated-title {
+    grid-column: auto;
+  }
+  .unseen-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .unseen-row {
+    grid-template-columns: 1fr;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -79,6 +152,76 @@
     Single Signer Video demonstrates the output of our proposed system, where a single signer performs various signs. In contrast to the traditional multi-signer video, our proposed system ensure temporal consistency throughout the single-signer process. It ensures that transitions between signs are fluid, realistic, and free from interruptions. The consistent posture and smooth gesture transitions in the single singer video showcase the system’s ability to produce coherent and natural signing.
   </p>
   <p> These video demonstrations provide important qualitative insights into the capabilities of our system. The traditional multi-signer video highlights common issues such as temporal inconsistencies, while the single signer video showcases the strengths of our approach in producing temporally consistent and fluid sign language sequences. Going forward, we aim to further enhance the visual clarity and realism of the generated videos.</p>
+
+
+<!-- ===============================
+     Unseen Signer Analysis Gallery
+     1 Original + 3 Generated (per row)
+     =============================== -->
+
+<section class="unseen-gallery">
+
+  <h2>Unseen Signer Analysis</h2>
+  <p>
+    Each row shows one original signer sample (left) and three EOSIGN-generated
+    outputs (right) for unseen signer scenarios.
+  </p>
+
+  <!-- Column Titles -->
+  <div class="unseen-header">
+    <div class="original-title">Original</div>
+    <div class="generated-title">Generated</div>
+  </div>
+
+  <!-- Row 1 -->
+  <div class="unseen-row">
+    <div class="unseen-card">
+      <img src="eat_original.gif" alt="Row 1 Original">
+    </div>
+    <div class="unseen-card">
+      <img src="eat_1.gif" alt="Row 1 Generated 1">
+    </div>
+    <div class="unseen-card">
+      <img src="eat_2.gif" alt="Row 1 Generated 2">
+    </div>
+    <div class="unseen-card">
+      <img src="eat_3.gif" alt="Row 1 Generated 3">
+    </div>
+  </div>
+
+  <!-- Row 2 -->
+  <div class="unseen-row">
+    <div class="unseen-card">
+      <img src="uni_original.gif" alt="Row 2 Original">
+    </div>
+    <div class="unseen-card">
+      <img src="uni_1.gif" alt="Row 2 Generated 1">
+    </div>
+    <div class="unseen-card">
+      <img src="uni_2.gif" alt="Row 2 Generated 2">
+    </div>
+    <div class="unseen-card">
+      <img src="uni_3.gif" alt="Row 2 Generated 3">
+    </div>
+  </div>
+
+  <!-- Row 3 -->
+  <div class="unseen-row">
+    <div class="unseen-card">
+      <img src="go_original.gif" alt="Row 3 Original">
+    </div>
+    <div class="unseen-card">
+      <img src="go_1.gif" alt="Row 3 Generated 1">
+    </div>
+    <div class="unseen-card">
+      <img src="go_2.gif" alt="Row 3 Generated 2">
+    </div>
+    <div class="unseen-card">
+      <img src="go_3.gif" alt="Row 3 Generated 3">
+    </div>
+  </div>
+
+</section>
 
 </body>
 </html>
