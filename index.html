@@ -75,10 +75,10 @@
   text-align: center;
 }
 
-/* One row = 4 GIFs */
+/* One row = 1 Original + 5 Generated */
 .unseen-row {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr repeat(5, 1fr); /* total 6 columns */
   gap: 16px;
   margin-bottom: 22px;
 }
@@ -167,10 +167,12 @@
   </p>
 
   <!-- Column Titles -->
-  <div class="unseen-header">
-    <div class="original-title">Original</div>
-    <div class="generated-title">Generated</div>
+<div class="unseen-header">
+  <div class="original-title">Original</div>
+  <div class="generated-title" style="grid-column: 2 / span 5;">
+    Generated
   </div>
+</div>
 
   <!-- Row 1 -->
   <div class="unseen-row">
@@ -186,6 +188,12 @@
     <div class="unseen-card">
       <img src="eat_3.gif" alt="Row 1 Generated 3">
     </div>
+	<div class="unseen-card">
+    <img src="Adobe Express - Adobe Express - ec7f8bb8-678f-4455-8cfd-97c2e418bde6.gif" alt="Row 1 Generated 4">
+  </div>
+  <div class="unseen-card">
+    <img src="Adobe Express - Adobe Express - d635ad63-ea7c-43d7-8eca-33be77a6e318.gif" alt="Row 1 Generated 5">
+  </div>
   </div>
 
   <!-- Row 2 -->
@@ -202,6 +210,12 @@
     <div class="unseen-card">
       <img src="uni_3.gif" alt="Row 2 Generated 3">
     </div>
+	<div class="unseen-card">
+    <img src="Adobe Express - Adobe Express - 973bc9c8-db5d-4564-974b-3ae6d9cdc550.gif" alt="Row 1 Generated 4">
+  </div>
+  <div class="unseen-card">
+    <img src="Adobe Express - Adobe Express - 39d056ed-3d21-486b-9106-86bbf6101ad0.gif" alt="Row 1 Generated 5">
+  </div>
   </div>
 
   <!-- Row 3 -->
@@ -218,6 +232,12 @@
     <div class="unseen-card">
       <img src="go_3.gif" alt="Row 3 Generated 3">
     </div>
+	<div class="unseen-card">
+    <img src="Adobe Express - Adobe Express - bc173611-4215-4696-a3a8-e04e80293811.gif" alt="Row 1 Generated 4">
+  </div>
+  <div class="unseen-card">
+    <img src="Adobe Express - Adobe Express - 08da34fa-78ba-4c46-ab41-cba5afde516d.gif" alt="Row 1 Generated 5">
+  </div>
   </div>
 
 </section>
